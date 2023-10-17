@@ -3,7 +3,7 @@ We are creating a game in Unity similar to untitledgoosegame, but you play as a 
 
 ---- 
 # Getting Started Developing
-
+![Example](instructionImages/1.png)
 1. Get Git
 	***WAIT*** to actually clone the repository until step 3
 	2. Option 1, use Github Desktop (easy, **recommended** for windows)
