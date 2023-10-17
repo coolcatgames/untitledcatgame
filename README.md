@@ -3,7 +3,7 @@ We are creating a game in Unity similar to untitledgoosegame, but you play as a 
 
 ---- 
 # Getting Started Developing
-![Example](instructionImages/1.png)
+![Example](1.png)
 1. Get Git
 	***WAIT*** to actually clone the repository until step 3
 	2. Option 1, use Github Desktop (easy, **recommended** for windows)
@@ -26,24 +26,25 @@ We are creating a game in Unity similar to untitledgoosegame, but you play as a 
 	1. Go [here](https://unity.com/download) and click the big blue download button
 	2. Activate your free license
 	3. On the left, select the installs tab
-		1. ![Example](instructionImages/1.png)
+		1. ![Example](InstructionImages/1.png)
 	4. Then click "Install Editor" and choose 2022.3.11f1 LTS
 		- The last 4 digits of that version may be slightly different depending on when you set this up, that should be fine
 4. Open the project in Unity
 	1. On that left area from before, click projects, then click open
-		- ![Example](instructionImages/2.png)
+		- ![Example](InstructionImages/2.png)
 	2. Navigate to where you cloned the repository from github, then click "Open"
 		- **NOTE:** The repository is called "untitledcatgame", and the unity project inside of it is called "untitledCatGame".
 			- Make sure you open the unity project folder
-		- ![Example](instructionImages/3.png)
+		- ![Example](InstructionImages/3.png)
 
 ----
 # How to save your changes to Github
 1. From Github Desktop, create a new branch
-	1. ![Example](instructionImages/4.png)
+	1. ![Example](InstructionImages/4.png)
 2. Name this branch like this "yourName-somethingDescriptive"
 	- Always push your changes into your own branch, you can select it after you create it then just keep pushing changes to it
-	- ![Example](instructionImages/5.png)
+	- ![Example](InstructionImages/5.png)
 3. **Do not** push changes directly into main, (it probably won't let you lol)
 	- We will merge the personal branches into main as people make progress
 	- This prevents stuff from being broken and lost after it's been committed to the main branch
+
