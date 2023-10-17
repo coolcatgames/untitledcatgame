@@ -3,7 +3,7 @@ We are creating a game in Unity similar to untitledgoosegame, but you play as a 
 
 ---- 
 # Getting Started Developing
-
+![Example](instructionImages/1.png)
 1. Get Git
 	***WAIT*** to actually clone the repository until step 3
 	2. Option 1, use Github Desktop (easy, **recommended** for windows)
@@ -26,7 +26,7 @@ We are creating a game in Unity similar to untitledgoosegame, but you play as a 
 	1. Go [here](https://unity.com/download) and click the big blue download button
 	2. Activate your free license
 	3. On the left, select the installs tab
-		![Example](instructionImages/1.png)
+		1. ![Example](instructionImages/1.png)
 	4. Then click "Install Editor" and choose 2022.3.11f1 LTS
 		- The last 4 digits of that version may be slightly different depending on when you set this up, that should be fine
 4. Open the project in Unity
