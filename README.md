@@ -10,9 +10,9 @@ We are creating a game in Unity similar to untitledgoosegame, but you play as a 
 		2. This should download git for you, and also a friendly app that will let you manage git repositories from Github easily
 		3. This probably works on Mac as well but I don't have a Mac so I'm not sure
 	2. Option 2, just download Git directly
-	- [Go to this website](https://git-scm.com/download/win) and download the git installer for windows
-	- If you are on a different platform, follow the instructions [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-	- **Note:** For most of this I'm going to assume you used Github Desktop because it makes things easier, though it's certainly possible without it if you're familiar with git from the command line
+		- [Go to this website](https://git-scm.com/download/win) and download the git installer for windows
+		- If you are on a different platform, follow the instructions [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+		- **Note:** For most of this I'm going to assume you used Github Desktop because it makes things easier, though it's certainly possible without it if you're familiar with git from the command line
 1. Download Git LFS
 	- This is required to track files larger than 100mb with git, which is something we could easily otherwise have a problem with with our project
 	1. Follow the download instructions [here](https://git-lfs.com/)
