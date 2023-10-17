@@ -6,11 +6,11 @@ We are creating a game in Unity similar to untitledgoosegame, but you play as a 
 ![Example](1.png)
 1. Get Git
 	- ***WAIT*** to actually clone the repository until step 3
-	2. Option 1, use Github Desktop (easy, **recommended** for windows)
+	1. Option 1, use Github Desktop (easy, **recommended** for windows)
 		1. [Click here](https://desktop.github.com/) and click the big download button
 		2. This should download git for you, and also a friendly app that will let you manage git repositories from Github easily
 		3. This probably works on Mac as well but I don't have a Mac so I'm not sure
-	3. Option 2, just download Git directly
+	2. Option 2, just download Git directly
 	    - [Go to this website](https://git-scm.com/download/win) and download the git installer for windows
 	    - If you are on a different platform, follow the instructions [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 	    - **Note:** For most of this I'm going to assume you used Github Desktop because it makes things easier, though it's certainly possible without it if you're familiar with git from the command line
