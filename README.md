@@ -5,7 +5,7 @@ We are creating a game in Unity similar to untitledgoosegame, but you play as a 
 # Getting Started Developing
 ![Example](1.png)
 1. Get Git
-	***WAIT*** to actually clone the repository until step 3
+	- ***WAIT*** to actually clone the repository until step 3
 	2. Option 1, use Github Desktop (easy, **recommended** for windows)
 		1. [Click here](https://desktop.github.com/) and click the big download button
 		2. This should download git for you, and also a friendly app that will let you manage git repositories from Github easily
