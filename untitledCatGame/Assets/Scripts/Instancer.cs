@@ -15,9 +15,9 @@ public class Instancer : MonoBehaviour
     void Start()
     {
         //Random.seed = seed;
-        for (int i = 0; i < 10; i++)//tree
+        for (int i = 0; i < 50; i++)//tree
         {
-            Instantiate(grass, new Vector3(Random.Range(-20.0f, 20.0f),6.75f, Random.Range(-20.0f, 20.0f)), Quaternion.identity);
+            Instantiate(grass, new Vector3(Random.Range(-20.0f, 20.0f),0.0f, Random.Range(-20.0f, 20.0f)), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)));
         }
         for (int i = 0; i < 25; i++)//grass
         {
@@ -28,11 +28,11 @@ public class Instancer : MonoBehaviour
                 x = Random.Range(-20.0f, 20.0f);
                 y = Random.Range(-20.0f, 20.0f);
             }
-            Instantiate(tree, new Vector3(x, 4.7f, y), Quaternion.identity);
+            Instantiate(tree, new Vector3(x, 0.0f, y), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)));
         }
-        for (int i = 0; i < 5; i++)//cloud
+        for (int i = 0; i < 15; i++)//cloud
         {
-            Instantiate(cloud, new Vector3(Random.Range(-78.0f, -17.0f), Random.Range(20.0f, 30.0f), Random.Range(-20.0f, 50.0f)), Quaternion.identity);
+            Instantiate(cloud, new Vector3(Random.Range(-50.0f, 50.0f), Random.Range(20.0f, 30.0f), Random.Range(-50.0f, 50.0f)), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)));
         }
     }
 
