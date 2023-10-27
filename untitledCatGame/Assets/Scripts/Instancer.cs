@@ -8,6 +8,7 @@ public class Instancer : MonoBehaviour
     public GameObject grass;
     public GameObject tree;
     public GameObject cloud;
+    public Terrain terrain;
 
     //CPU instancing is bad, avoid for objects where lighting and collisions aren't necessary (grass, background objects, etc.), this is just a temporary example
 
@@ -17,18 +18,20 @@ public class Instancer : MonoBehaviour
         //Random.seed = seed;
         for (int i = 0; i < 50; i++)//tree
         {
-            Instantiate(grass, new Vector3(Random.Range(-20.0f, 20.0f),0.0f, Random.Range(-20.0f, 20.0f)), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)));
+            float randX = Random.Range(-20.0f, 20.0f);
+            float randY = Random.Range(-20.0f, 20.0f);
+            Instantiate(grass, new Vector3(randX , terrain.SampleHeight(new Vector3(randX, 0, randY)), randY), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)));
         }
         for (int i = 0; i < 25; i++)//grass
         {
-            float x = Random.Range(-20.0f, 20.0f);
-            float y = Random.Range(-20.0f, 20.0f);
-            while (x>-10 && x<10 && y>-10 && y<10)
+            float randX = Random.Range(-20.0f, 20.0f);
+            float randY = Random.Range(-20.0f, 20.0f);
+            while (randX > -10 && randX < 10 && randY > -10 && randY < 10)
             {
-                x = Random.Range(-20.0f, 20.0f);
-                y = Random.Range(-20.0f, 20.0f);
+                randX = Random.Range(-20.0f, 20.0f);
+                randY = Random.Range(-20.0f, 20.0f);
             }
-            Instantiate(tree, new Vector3(x, 0.0f, y), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)));
+            Instantiate(tree, new Vector3(randX, terrain.SampleHeight(new Vector3(randX, 0, randY)), randY), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)));
         }
         for (int i = 0; i < 15; i++)//cloud
         {
