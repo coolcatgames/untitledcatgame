@@ -16,26 +16,26 @@ public class Instancer : MonoBehaviour
     void Start()
     {
         //Random.seed = seed;
-        for (int i = 0; i < 50; i++)//tree
+        for (int i = 0; i < 500; i++)//grass
         {
-            float randX = Random.Range(-20.0f, 20.0f);
-            float randY = Random.Range(-20.0f, 20.0f);
+            float randX = Random.Range(-64.0f, 64.0f);
+            float randY = Random.Range(-64.0f, 64.0f);
             Instantiate(grass, new Vector3(randX , terrain.SampleHeight(new Vector3(randX, 0, randY)), randY), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)));
         }
-        for (int i = 0; i < 25; i++)//grass
+        for (int i = 0; i < 150; i++)//tree
         {
-            float randX = Random.Range(-20.0f, 20.0f);
-            float randY = Random.Range(-20.0f, 20.0f);
-            while (randX > -10 && randX < 10 && randY > -10 && randY < 10)
+            float randX = Random.Range(-64.0f, 64.0f);
+            float randY = Random.Range(-64.0f, 64.0f);
+            while (randX > -16 && randX < 16 && randY > -16 && randY < 16)
             {
-                randX = Random.Range(-20.0f, 20.0f);
-                randY = Random.Range(-20.0f, 20.0f);
+                randX = Random.Range(-64.0f, 64.0f);
+                randY = Random.Range(-64.0f, 64.0f);
             }
             Instantiate(tree, new Vector3(randX, terrain.SampleHeight(new Vector3(randX, 0, randY)), randY), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)));
         }
-        for (int i = 0; i < 15; i++)//cloud
+        for (int i = 0; i < 25; i++)//cloud
         {
-            Instantiate(cloud, new Vector3(Random.Range(-50.0f, 50.0f), Random.Range(20.0f, 30.0f), Random.Range(-50.0f, 50.0f)), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)));
+            Instantiate(cloud, new Vector3(Random.Range(-96.0f, 96.0f), Random.Range(40.0f, 50.0f), Random.Range(-96.0f, 96.0f)), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)));
         }
     }
 
