@@ -149,7 +149,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 21
+      scalar: 12
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -202,8 +202,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
-      minScalar: 5
+      scalar: 0.75
+      minScalar: 0.25
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2608,9 +2608,9 @@ ParticleSystem:
         m_RotationOrder: 4
     magnitude:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.5
-      minScalar: 1
+      minMaxState: 3
+      scalar: 1.25
+      minScalar: 0.75
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4921,6 +4921,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 88dcebd395892004baff716c192d0caa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 14b94e3c49fd3fc47b574df740d19d5d, type: 2}
+    - target: {fileID: -7635826562936255635, guid: 88dcebd395892004baff716c192d0caa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b9b69e820cf3f34f871428d21366884, type: 2}
     - target: {fileID: 919132149155446097, guid: 88dcebd395892004baff716c192d0caa,
         type: 3}
       propertyPath: m_Name

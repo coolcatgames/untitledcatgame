@@ -50,17 +50,14 @@ public class StoreTest : MonoBehaviour
         Warning.SetActive(false);
         if (Application.internetReachability == NetworkReachability.NotReachable)
         {
-            //Debug.Log("Internet connection not available, please try again later");
             Store.SetActive(false);
         }
         else
         {
             WiFi.SetActive(false);
-            //Debug.Log("Welcome to the Untitled Cat Game Store!");
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -87,12 +84,10 @@ public class StoreTest : MonoBehaviour
             if (checkLuhn(cardNum) == true)
             {
                 warnText.text = "Thank you for your purchase! We hope you continue to enjoy our game!";
-                //Debug.Log("Thank you for your purchase! We hope you continue to enjoy our game!");
             }
             else
             {
                 warnText.text = "Attempting fraud is a felony in the United States. Please enter a valid credit card number or authorities will be contacted.";
-                //Debug.Log("Attempting fraud is a felony in the United States. Please enter a valid credit card number or authorities will be contacted.");
             }
         }
         Warning.SetActive(true);

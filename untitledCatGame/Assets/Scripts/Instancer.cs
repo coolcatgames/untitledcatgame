@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Instancer : MonoBehaviour
 {
     //public int seed = 123456789;
-    public GameObject grass;
+    public Mesh grass;
+    public Mesh grass2;
+    public int instance = 10;
+    public Material material;
+    private List<List<Matrix4x4>> HiBatches = new List<List<Matrix4x4>>();
+    private List<List<Matrix4x4>> LoBatches = new List<List<Matrix4x4>>();
     public GameObject tree;
     public GameObject cloud;
     public Terrain terrain;
@@ -16,12 +22,48 @@ public class Instancer : MonoBehaviour
     void Start()
     {
         //Random.seed = seed;
-        for (int i = 0; i < 500; i++)//grass
+
+        int matCount = 0;
+        //main area
+        for (int i = 0; i< instance; i++)
         {
-            float randX = Random.Range(-64.0f, 64.0f);
-            float randY = Random.Range(-64.0f, 64.0f);
-            Instantiate(grass, new Vector3(randX , terrain.SampleHeight(new Vector3(randX, 0, randY)), randY), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)));
+            if(matCount < 1000 && HiBatches.Count != 0)
+            {
+                float randX = Random.Range(-24.0f, 24.0f);
+                float randY = Random.Range(-24.0f, 24.0f);
+                HiBatches[HiBatches.Count - 1].Add(Matrix4x4.TRS(new Vector3(randX, terrain.SampleHeight(new Vector3(randX, 0, randY))+0.3f, randY), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)), new Vector3(0.2f, 0.2f, 0.2f)));
+                matCount+=1;
+            }
+            else
+            {
+                HiBatches.Add(new List<Matrix4x4>());
+                matCount = 0;
+            }
         }
+        //background area
+        matCount = 0;
+        for (int i = 0; i < instance; i++)
+        {
+            if (matCount < 1000 && LoBatches.Count != 0)
+            {
+                float randX = Random.Range(-64.0f, 64.0f);//, 24.0f)*RandomSign();
+                float randY = Random.Range(-64.0f, 64.0f);//, 24.0f)*RandomSign();
+                while (randX > -24 && randX < 24 && randY > -24 && randY < 24)
+                {
+                    randX = Random.Range(-64.0f, 64.0f);
+                    randY = Random.Range(-64.0f, 64.0f);
+                }
+                LoBatches[LoBatches.Count - 1].Add(Matrix4x4.TRS(new Vector3(randX, terrain.SampleHeight(new Vector3(randX, 0, randY)) + 0.3f, randY), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)), new Vector3(0.2f, 0.2f, 0.2f)));
+                matCount += 1;
+            }
+            else
+            {
+                LoBatches.Add(new List<Matrix4x4>());
+                matCount = 0;
+            }
+        }
+
+
         for (int i = 0; i < 150; i++)//tree
         {
             float randX = Random.Range(-64.0f, 64.0f);
@@ -42,6 +84,23 @@ public class Instancer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        RenderBatches();
+    }
+
+    void RenderBatches()
+    {
+        foreach(var Batch in HiBatches)
+        {
+            Graphics.DrawMeshInstanced(grass, 0, material, Batch);
+        }
+        foreach (var Batch in LoBatches)
+        {
+            Graphics.DrawMeshInstanced(grass2, 0, material, Batch);
+        }
+    }
+
+    int RandomSign()
+    {
+        return (Random.Range(0,2) *2)-1;
     }
 }

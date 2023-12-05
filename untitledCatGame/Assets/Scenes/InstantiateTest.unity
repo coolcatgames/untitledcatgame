@@ -450,7 +450,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f469e2e9d00a0a4bba0bba476af4800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grass: {fileID: 6475019679910212574, guid: 4583bbcf73a798a49b389eee1f6e2e20, type: 3}
+  grass: {fileID: -2432090755550338912, guid: fe365f9e6bfddda4b8c01caacee38c03, type: 3}
+  grass2: {fileID: -2432090755550338912, guid: af4730bf294586b4da2b6947b33b8ba3, type: 3}
+  instance: 100000
+  material: {fileID: 2100000, guid: 4818ea0159202254da1155851aeafcba, type: 2}
   tree: {fileID: 4537342604781612573, guid: 43e35f10dfd16444b95476bb34d1552d, type: 3}
   cloud: {fileID: 1285078357702726496, guid: aa0fa450bc2966d45aeaca7dd5b922ea, type: 3}
   terrain: {fileID: 666358226}
