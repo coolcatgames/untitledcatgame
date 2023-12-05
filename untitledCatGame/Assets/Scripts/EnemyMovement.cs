@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -59,7 +58,7 @@ public class EnemyMovement : MonoBehaviour
                     else {
                         // Side we chose was facing the player, we will try again on the other side of the object
                         // 2 here assumes the object is 2 units wide or narrower. We might need to change it for our game.
-                        if (NavMesh.SamplePosition(Colliders[i].transform.position - (Target.position - hit.position).normalized * 2, out NavMeshHit hit2, 2f, Agent.areaMask)){
+                        if (NavMesh.SamplePosition(Colliders[i].transform.position - (Target.position - hit.position).normalized * 1, out NavMeshHit hit2, 2f, Agent.areaMask)){
                             if (!NavMesh.FindClosestEdge(hit2.position, out hit2, Agent.areaMask)){
                                 Debug.LogError($"Unable to find an edge close to {hit2.position} (second attempt)");   
                             }

@@ -1,5 +1,7 @@
 # Stuff we added
 .obsidian
+VideoTutorials
+VideoTutorials/*
 
 # This .gitignore file should be placed at the root of your Unity project directory
 #
@@ -79,13 +81,115 @@ untitledCatGame/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 # Temporary auto-generated Android Assets
 untitledCatGame/[Aa]ssets/[Ss]treamingAssets/aa.meta
 untitledCatGame/[Aa]ssets/[Ss]treamingAssets/aa/*
-InstructionImages/1.png
-InstructionImages/2.png
-InstructionImages/3.png
-InstructionImages/4.png
-InstructionImages/5.png
-InstructionImages/1.png
-InstructionImages/2.png
-InstructionImages/3.png
-InstructionImages/4.png
-InstructionImages/5.png
+
+###### Blender ######
+# generic files to ignore
+blenderModeling/.*
+.*
+
+# python temp paths
+blenderModeling/__pycache__/
+__pycache__/
+*.py[cod]
+
+# editors
+*~
+*.swp
+*.swo
+*#
+
+# Indexes for emacs, vi & others
+blenderModeling/TAGS
+blenderModeling/tags
+TAGS
+tags
+
+# QtCreator
+blenderModeling/CMakeLists.txt.user
+CMakeLists.txt.user
+
+# ms-windows
+blenderModeling/Thumbs.db
+blenderModeling/ehthumbs.db
+blenderModeling/Desktop.ini
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# commonly used paths in blender
+blenderModeling/blender.bin
+blenderModeling/BUILD_NOTES.txt
+/blender.bin
+/BUILD_NOTES.txt
+
+# local patches
+blenderModeling/*.patch
+blenderModeling/*.diff
+/*.patch
+/*.diff
+
+# in-source doc-gen
+blenderModeling/doc/doxygen/html/
+blenderModeling/doc/python_api/sphinx-in-tmp/
+blenderModeling/doc/python_api/sphinx-in/
+blenderModeling/doc/python_api/sphinx-out/
+blenderModeling/doc/python_api/rst/bmesh.ops.rst
+/doc/doxygen/html/
+/doc/python_api/sphinx-in-tmp/
+/doc/python_api/sphinx-in/
+/doc/python_api/sphinx-out/
+/doc/python_api/rst/bmesh.ops.rst
+
+# in-source lib downloads
+blenderModeling/build_files/build_environment/downloads/
+/build_files/build_environment/downloads/
+
+# in-source buildbot signing configuration
+blenderModeling/build_files/buildbot/codesign/config_server.py
+/build_files/buildbot/codesign/config_server.py
+
+# smoke simulation noise tile (generated)
+blenderModeling/waveletNoiseTile.bin
+waveletNoiseTile.bin
+
+# testing environment
+blenderModeling/Testing/
+/Testing/
+
+# Translations.
+blenderModeling/locale/user-config.py
+/locale/user-config.py
+
+# External repositories.
+blenderModeling/scripts/addons/
+blenderModeling/scripts/addons_contrib/
+/scripts/addons/
+/scripts/addons_contrib/
+
+# Ignore old submodules directories.
+# Eventually need to get rid of those, but for the first time of transition
+# avoid indidents when the folders exists after bisect and developers staging
+# them by accident.
+blenderModeling/release/scripts/addons/
+blenderModeling/release/datafiles/locale/
+blenderModeling/release/scripts/addons_contrib/
+blenderModeling/source/tools/
+/release/scripts/addons/
+/release/datafiles/locale/
+/release/scripts/addons_contrib/
+/source/tools/
+
+# Build files for VS and VS Code.
+blenderModeling/build/
+blenderModeling/out/
+blenderModeling/CMakeSettings.json
+blenderModeling/CMakePresets.json
+blenderModeling/CMakeUserPresets.json
+/build/
+/out/
+CMakeSettings.json
+CMakePresets.json
+CMakeUserPresets.json
+
+# Backup blend files
+*.blend1
