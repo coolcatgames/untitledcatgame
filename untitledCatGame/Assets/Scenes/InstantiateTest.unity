@@ -229,11 +229,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a78ac9f89c43ce4e8cf0b0241aec7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height1: 1
+  height1: 8
   height2: 0.1
   width: 128
   length: 128
-  scale1: 10
+  scale1: 8
   scale2: 50
 --- !u!1 &705507993
 GameObject:
