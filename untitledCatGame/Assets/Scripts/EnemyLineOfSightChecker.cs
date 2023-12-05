@@ -17,7 +17,7 @@ public class EnemyLineOfSightChecker : MonoBehaviour
 
     private Coroutine CheckForLineOfSightCoroutine;
 
-    private void awake() {
+    private void Awake() {
         Collider = GetComponent<SphereCollider>();
          
     }
