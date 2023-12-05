@@ -11,12 +11,6 @@ public class Collectable : MonoBehaviour
 
     void Awake() => total++;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter(Collider other){
         if (other.CompareTag("Player")){
             OnCollected?.Invoke();
