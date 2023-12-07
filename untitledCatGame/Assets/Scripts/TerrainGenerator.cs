@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.AI;
+using Unity.AI.Navigation;
 
 public class TerrainGenerator : MonoBehaviour
 {
@@ -13,10 +15,13 @@ public class TerrainGenerator : MonoBehaviour
     public float scale1 = 10f;
     public float scale2 = 50f;
 
+    public NavMeshSurface ground;
+
     private void Start()
     {
         Terrain terrain = GetComponent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData);
+        ground.BuildNavMesh();
     }
 
     TerrainData GenerateTerrain(TerrainData terrainData)
