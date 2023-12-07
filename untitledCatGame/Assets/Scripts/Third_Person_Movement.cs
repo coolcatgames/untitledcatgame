@@ -9,6 +9,14 @@ public class Third_Person_Movement : MonoBehaviour
     public Animator anim;
 
     public float speed = 6f;
+    public float gravity = -9.8f;
+
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
+
+    bool isGrounded;
+    Vector3 velocity;
 
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
@@ -19,7 +27,13 @@ public class Third_Person_Movement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
+    {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        if (isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+
         float horizontal = Input.GetAxisRaw("Horizontal"); // -1 for A/ right arrow, 1 for d/ right
         float vertical = Input.GetAxisRaw("Vertical");
         //anim.SetFloat("Moving", Input.GetAxis("Vertical"));
@@ -38,5 +52,7 @@ public class Third_Person_Movement : MonoBehaviour
         else {
             anim.SetBool("isMoving", false);
         }
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity*Time.deltaTime);
     }
 }

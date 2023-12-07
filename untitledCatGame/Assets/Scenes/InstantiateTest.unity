@@ -191,33 +191,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8, y: 2.25, z: 3}
   m_Center: {x: 0, y: 1.12, z: 0}
---- !u!54 &266471627
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 266471623}
-  serializedVersion: 4
-  m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 80
-  m_CollisionDetection: 1
 --- !u!114 &266471628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,6 +207,12 @@ MonoBehaviour:
   cam: {fileID: 1530863678}
   anim: {fileID: 266471630}
   speed: 6
+  gravity: -9.8
+  groundCheck: {fileID: 1423340030}
+  groundDistance: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 8
   turnSmoothTime: 0.1
 --- !u!143 &266471629
 CharacterController:
@@ -1151,7 +1130,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.086666666
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 41c562bc74e0cd845ae602911e879057, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &705507993
 GameObject:
@@ -7066,6 +7045,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 380818990}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: bc9d063cd408895b1ab0a90b8bdf9daf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1423340030}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc9d063cd408895b1ab0a90b8bdf9daf,
         type: 3}
@@ -7079,10 +7062,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 266471628}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc9d063cd408895b1ab0a90b8bdf9daf,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 266471627}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc9d063cd408895b1ab0a90b8bdf9daf,
         type: 3}
       insertIndex: -1
@@ -7121,7 +7100,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807848732}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1267386, y: 0.000000017067633, z: -0.0000000021807123, w: 0.99193615}
+  m_LocalRotation: {x: 0.1267386, y: -0.000000017067633, z: 0.0000000021807123, w: 0.99193615}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7181,6 +7160,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 774677032}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1423340029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1423340030}
+  m_Layer: 8
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1423340030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423340029}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 266471631}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1530863674
 GameObject:
   m_ObjectHideFlags: 0
