@@ -9,11 +9,19 @@ public class Instancer : MonoBehaviour
     public Mesh grass;
     public Mesh grass2;
     public int instance = 10;
+    public float denseArea = 24.0f;
     public Material material;
     private List<List<Matrix4x4>> HiBatches = new List<List<Matrix4x4>>();
     private List<List<Matrix4x4>> LoBatches = new List<List<Matrix4x4>>();
     public GameObject tree;
+    public int treeCount = 150;
+    public float treeBuffer = 16.0f;
     public GameObject cloud;
+    public int cloudCount = 25;
+    public float cloudMinHeight = 40.0f;
+    public float cloudMaxHeight = 50.0f;
+    public float cloudBuffer = 32.0f;
+    public float genArea = 64.0f;
     public Terrain terrain;
 
     //CPU instancing is bad, avoid for objects where lighting and collisions aren't necessary (grass, background objects, etc.), this is just a temporary example
@@ -29,8 +37,8 @@ public class Instancer : MonoBehaviour
         {
             if(matCount < 1000 && HiBatches.Count != 0)
             {
-                float randX = Random.Range(-24.0f, 24.0f);
-                float randY = Random.Range(-24.0f, 24.0f);
+                float randX = Random.Range(-denseArea, denseArea);
+                float randY = Random.Range(-denseArea, denseArea);
                 HiBatches[HiBatches.Count - 1].Add(Matrix4x4.TRS(new Vector3(randX, terrain.SampleHeight(new Vector3(randX, 0, randY))+0.3f, randY), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)), new Vector3(0.2f, 0.2f, 0.2f)));
                 matCount+=1;
             }
@@ -46,12 +54,12 @@ public class Instancer : MonoBehaviour
         {
             if (matCount < 1000 && LoBatches.Count != 0)
             {
-                float randX = Random.Range(-64.0f, 64.0f);//, 24.0f)*RandomSign();
-                float randY = Random.Range(-64.0f, 64.0f);//, 24.0f)*RandomSign();
-                while (randX > -24 && randX < 24 && randY > -24 && randY < 24)
+                float randX = Random.Range(-genArea, genArea);//, 24.0f)*RandomSign();
+                float randY = Random.Range(-genArea, genArea);//, 24.0f)*RandomSign();
+                while (randX > -denseArea && randX < denseArea && randY > -denseArea && randY < denseArea)
                 {
-                    randX = Random.Range(-64.0f, 64.0f);
-                    randY = Random.Range(-64.0f, 64.0f);
+                    randX = Random.Range(-genArea, genArea);
+                    randY = Random.Range(-genArea, genArea);
                 }
                 LoBatches[LoBatches.Count - 1].Add(Matrix4x4.TRS(new Vector3(randX, terrain.SampleHeight(new Vector3(randX, 0, randY)) + 0.3f, randY), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)), new Vector3(0.2f, 0.2f, 0.2f)));
                 matCount += 1;
@@ -64,20 +72,20 @@ public class Instancer : MonoBehaviour
         }
 
 
-        for (int i = 0; i < 150; i++)//tree
+        for (int i = 0; i < treeCount; i++)//tree
         {
-            float randX = Random.Range(-64.0f, 64.0f);
-            float randY = Random.Range(-64.0f, 64.0f);
-            while (randX > -16 && randX < 16 && randY > -16 && randY < 16)
+            float randX = Random.Range(-genArea, genArea);
+            float randY = Random.Range(-genArea, genArea);
+            while (randX > -treeBuffer && randX < treeBuffer && randY > -treeBuffer && randY < treeBuffer)
             {
-                randX = Random.Range(-64.0f, 64.0f);
-                randY = Random.Range(-64.0f, 64.0f);
+                randX = Random.Range(-genArea, genArea);
+                randY = Random.Range(-genArea, genArea);
             }
             Instantiate(tree, new Vector3(randX, terrain.SampleHeight(new Vector3(randX, 0, randY)), randY), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)));
         }
-        for (int i = 0; i < 25; i++)//cloud
+        for (int i = 0; i < cloudCount; i++)//cloud
         {
-            Instantiate(cloud, new Vector3(Random.Range(-96.0f, 96.0f), Random.Range(40.0f, 50.0f), Random.Range(-96.0f, 96.0f)), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)));
+            Instantiate(cloud, new Vector3(Random.Range(-genArea-cloudBuffer, genArea + cloudBuffer), Random.Range(cloudMinHeight, cloudMaxHeight), Random.Range(-genArea - cloudBuffer, genArea + cloudBuffer)), Quaternion.Euler(new Vector3(0, Random.Range(-360f, 360f), 0)));
         }
     }
 
